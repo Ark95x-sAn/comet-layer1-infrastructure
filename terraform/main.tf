@@ -190,6 +190,12 @@ module "rds_postgresql" {
   }
 }
 
+# Random password for MongoDB
+resource "random_password" "mongodb_password" {
+  length  = 32
+  special = true
+}
+
 # ================================================================
 # DATABASE - MONGODB (DocumentDB)
 # ================================================================
