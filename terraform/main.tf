@@ -106,6 +106,14 @@ module "vpc" {
   tags = {
     "kubernetes.io/cluster/${var.project_name}-eks" = "shared"
   }
+
+  # Database subnets
+  database_subnets = ["10.0.21.0/24", "10.0.22.0/24", "10.0.23.0/24"]
+  create_database_subnet_group = true
+  
+  # ElastiCache subnets
+  elasticache_subnets = ["10.0.31.0/24", "10.0.32.0/24", "10.0.33.0/24"]
+  create_elasticache_subnet_group = true
 }
 
 # ================================================================
